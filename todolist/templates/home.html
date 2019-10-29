@@ -1,0 +1,128 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}" type="text/css">
+    <link rel="icon" href="{% static 'images/list.png' %}" type="image/png">
+    <title>todo list</title>
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+            <a href="{{ home.html }}"><img src="{% static 'images/list.png' %}"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav ml-auto">
+                    <a style="margin: 10px;" class="nav-item nav-link" href="#"><b>Help</b></a>
+                    <a style="margin: 10px;" class="nav-item nav-link" href="#"><b>About us</b></a> {% if user.is_authenticated %}
+                    <label style="margin: 10px;" class="nav-item nav-link"><b>Hello, {{ user.first_name }}</b></label>
+                    <a href="accounts/logout">
+                        <button style="margin: 10px;" type="button" class="btn btn-outline-info">Logout</button>
+                    </a>
+                    {% else %}
+                    <a href="accounts/login">
+                        <button style="margin: 10px;" type="button" class="btn btn-outline-info">Login</button>
+                    </a>
+                    <a href="accounts/register">
+                        <button style="margin: 10px;" type="button" class="btn btn-outline-info">Register</button>
+                    </a>
+                    {% endif %}
+                </div>
+            </div>
+        </nav>
+    </header>
+    <hr width="100%">
+
+    <div class="heading">
+        <h2 style="color: #386685;">Organise your life in a simple way...</h2>
+        <h2 style="color: red;">And enjoy it...</h2>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="slogan-first">
+                    <p>
+                        Life is very simple and don't make it very complex. We are here to help you to keep track of everything in one place, so you can get it all done and enjoy more peace of mind along the way.
+                    </p>
+                    <a href="accounts/register">
+                        <button type="button" class="btn btn-info"><b>Get Started-It's Free</b></button>
+                    </a>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <img class="image-first" src="{% static 'images/office.jpg' %}">
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-6">
+                <img class="image-second" src="{% static 'images/checklist.jpg' %}">
+            </div>
+            <div class="col-sm-6">
+                <h2 class="second-heading">Don't worry about forgetting things again</h2>
+                <div class="slogan-second">
+                    <p>
+                        We remember it all for you. You can get your tasks out of your head and onto your todo list anytime and anywhere.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="tagline text-center">
+            <h1>We help millions of people to make more in control of their lives...</h1>
+        </div>
+        <div class="text-center">
+            <a href="accounts/register">
+                <button style="font-size: 20px; margin-top: 10px;" type="button" class="btn btn-info"><b>Get Started-It's Free</b></button>
+            </a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="text-center">
+                <a style="margin: 15px; color: #969699;" href="#"><u>About</u></a>
+                <a style="margin: 15px; color: #969699;" href="#"><u>Help</u></a>
+                <a style="margin: 15px; color: #969699;" href="#"><u>Security</u></a>
+                <a style="margin: 15px; color: #969699;" href="#"><u>Privacy</u></a>
+                <a style="margin: 15px; color: #969699;" href="#"><u>Terms of service</u></a>
+            </div>
+            <hr>
+            <div class="text-center">
+                <h5>Keep in touch</h5>
+            </div>
+            <div class="social-media-icons col-xs-12">
+                <ul class="list-inline col-xs-12">
+                    <a href="#" target="_blank"><i class="fa fa-instagram fa-5x"></i></a>
+                    <a href="#" target="_blank"><i class="fa fa-facebook-square fa-5x"></i></a>
+                    <a href="#" target="_blank"><i class="fa fa-twitter-square fa-5x"></i></a>
+                    <a href="#" target="_blank"><i class="fa fa-youtube-square fa-5x"></i></a>
+                </ul>
+            </div>
+            <div class="text-center">
+                <p>A Nitish Kumar Production</p>
+                <p>&copy Copyright.All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+
+</html>
